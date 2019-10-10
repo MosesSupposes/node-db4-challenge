@@ -20,6 +20,10 @@ module.exports = {
         return db('recipes')
         .update(changes)
         .where('id', id)
+        .then(id => ({
+            before: changes,
+            after: this.findById(id)
+        }))
     },
 
     delete(id) {

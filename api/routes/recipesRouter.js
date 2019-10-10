@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     RecipesModel
     .find()
     .then(recipes => {
-        (!recipes.length)
+        (!Object.keys(recipes).length)
             ? res.status(404).json({error: "There are no recipes in the database yet"})
             : res.status(200).json(recipes)
     })

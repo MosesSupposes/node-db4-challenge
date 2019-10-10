@@ -19,3 +19,5 @@ router.get('/:id', async(req, res) => {
     else if (!Object.keys(ingredient).length) res.status(404).json({error: "There is no ingredient with the specified Id." })
     else res.status(200).json(ingredient) 
 })
+
+module.exports = router

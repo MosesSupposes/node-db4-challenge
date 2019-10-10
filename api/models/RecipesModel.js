@@ -10,6 +10,12 @@ module.exports = {
         .where('id', id)
     },
 
+    insert(recipe) {
+        return db('recipes')
+        .insert(recipe)
+        .then(_ => recipe)
+    },
+
     update(id, changes) {
         return db('recipes')
         .update(changes)

@@ -21,7 +21,7 @@ module.exports = {
         return db('ingredients')
         .update(changes)
         .where('id', id)
-        .then(id => this.findById(id)
+        .then(_ => this.findById(id)
             .then(([recipe]) => ({
                 before: changes,
                 after: recipe

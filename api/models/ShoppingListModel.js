@@ -34,7 +34,7 @@ module.exports = {
         return db('shopping_list')
         .update(changes)
         .where('id', id)
-        .then(id => this.findById(id)
+        .then(_ => this.findById(id)
             .then(([shoppingList]) => ({
                 before: changes,
                 after: shoppingList

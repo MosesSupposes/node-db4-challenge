@@ -27,4 +27,21 @@ router.post('/', async (req, res) => {
     else res.status(201).json(newIngredient)
 })
 
+router.put('/:id', async (req, res) => {
+    const [err, editedIngredient] = await withCatch( IngredientsModel.update(req.params.id, req.body) )
+
+    if (err) res.status(500).json({error: "Trouble updating the ingredient with the specified Id."})
+    else res.status(200).json(editedIngredient)
+})
+
+router.delete('/:id', async (req, res) => {
+    const [err, count] = await withCatch( IngredientsModel.delete(req.params.id) )
+
+    if (err) res.status(500).json({error: "Trouble deleting the ingredient with the specified Id."})
+    else res.status(200).json({
+        success: "Deleted the recipe with the specified Id.",
+        deleted: count
+    })
+})
+
 module.exports = router

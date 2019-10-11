@@ -1,0 +1,28 @@
+{
+  "name": "db4-challenge",
+  "version": "1.0.0",
+  "description": "## Topics",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MosesSupposes/node-db4-challenge.git"
+  },
+  "author": "Moses Samuel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MosesSupposes/node-db4-challenge/issues"
+  },
+  "homepage": "https://github.com/MosesSupposes/node-db4-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.19.5",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}

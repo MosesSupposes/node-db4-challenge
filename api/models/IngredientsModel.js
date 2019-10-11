@@ -13,7 +13,8 @@ module.exports = {
     insert(ingredients) {
         return db('ingredients')
         .insert(ingredients)
-        .then(_ => ingredients)
+        .then(_ => this.find())
+        .then(ingredients => ingredients.slice(-1)[0])
     },
 
     update(id, changes) {

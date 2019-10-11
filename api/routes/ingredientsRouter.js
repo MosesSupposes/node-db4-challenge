@@ -20,4 +20,11 @@ router.get('/:id', async(req, res) => {
     else res.status(200).json(ingredient) 
 })
 
+router.post('/', async (req, res) => {
+    const [err, newIngredient] = await withCatch( IngredientsModel.insert(req.body) )
+
+    if (err) res.status(500).json({error: "Trouble adding your ingredient to the database."})
+    else res.status(201).json(newIngredient)
+})
+
 module.exports = router
